@@ -1,6 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+from secrets import LASTFM_USERNAME, LASTFM_PASSWORD
+
 
 class LastfmScrapper:
     def __init__(self, username, password):
@@ -29,7 +31,7 @@ class LastfmScrapper:
 
 
 if __name__ == '__main__':
-    scrapper = LastfmScrapper(username="Pradzix", password="73v*57EDP5!^mP")
+    scrapper = LastfmScrapper(username=LASTFM_USERNAME, password=LASTFM_PASSWORD)
     driver = scrapper.driver
     driver.get("https://www.last.fm/login")
     driver.implicitly_wait(1)
